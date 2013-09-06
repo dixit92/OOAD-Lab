@@ -127,6 +127,20 @@ namespace WindowsFormsApplication3
             }
         }
 
+        private void convert_Click(object sender, EventArgs e)
+        {
+            //Add BR Tags
+            int nchar = NoChars.Value;
+            String txt = text.Text;
+            int nbr = text.TextLength/nchar;
+            int brlen=4;
+            for (int i=0; i<nbr; i++)
+            {
+                txt = txt.Insert(nchar + nchar * i + brlen * i, "<br>");
+            }
+            html.Text = txt;
+        }
+
         
     }
 }
