@@ -77,14 +77,7 @@ namespace WindowsFormsApplication3
             // text.SelectedText = "<sup>" + text.SelectedText + "</sup>";
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            string f=font.SelectedItem.ToString();
-            string s=size.SelectedItem.ToString();
-            string c=color.SelectedItem.ToString();
-            text.SelectedText = "<font face=\"" + f + "\" size=\"" + s + "\" color=\"" + c + "\" >" + text.SelectedText + "</font>";
-            
-        }
+       
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -123,7 +116,7 @@ namespace WindowsFormsApplication3
             if (result == DialogResult.OK)
             {
                 saveFile = sfd.FileName;
-                text.SaveFile(saveFile, RichTextBoxStreamType.PlainText);
+                html.SaveFile(saveFile, RichTextBoxStreamType.PlainText);
             }
         }
 
@@ -138,6 +131,16 @@ namespace WindowsFormsApplication3
             {
                 txt = txt.Insert(nchar + nchar * i + brlen * i, "<br>");
             }
+
+            //Find PP (paragraphs) and insert </p><p> at every instance
+            txt = txt.Replace("PP", "</p><p>");
+
+            //Now TODO: Bold, Italics, Subscript and Superscript
+
+            //End: Add HTML, FONT and <p> to the final result
+            txt = txt.Insert(0, "<html><font face=\"" + font.Text + "\" size=\"" + size.Text + "\" color=\""
+                + color.Text + "\">" +"<p>");
+            txt = txt.Insert(txt.Length, "</p></font></html>");
             html.Text = txt;
         }
 

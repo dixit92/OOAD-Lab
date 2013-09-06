@@ -44,7 +44,6 @@
             this.font = new System.Windows.Forms.ToolStripComboBox();
             this.size = new System.Windows.Forms.ToolStripComboBox();
             this.color = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.NoChars = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -127,8 +126,7 @@
             this.toolStripSeparator1,
             this.font,
             this.size,
-            this.color,
-            this.toolStripButton1});
+            this.color});
             this.toolStrip1.Location = new System.Drawing.Point(10, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(410, 25);
@@ -218,7 +216,6 @@
             // 
             this.color.Items.AddRange(new object[] {
             "Black",
-            "White",
             "Grey",
             "Red",
             "Blue",
@@ -226,16 +223,6 @@
             this.color.Name = "color";
             this.color.Size = new System.Drawing.Size(75, 25);
             this.color.Text = "Color";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // NoChars
             // 
@@ -330,7 +317,7 @@
             // convert
             // 
             this.convert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.convert.Location = new System.Drawing.Point(423, 27);
+            this.convert.Location = new System.Drawing.Point(429, 27);
             this.convert.Name = "convert";
             this.convert.Size = new System.Drawing.Size(94, 23);
             this.convert.TabIndex = 6;
@@ -396,7 +383,6 @@
         private System.Windows.Forms.Button convert;
         private System.Windows.Forms.ToolStripComboBox size;
         private System.Windows.Forms.ToolStripComboBox color;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
