@@ -122,26 +122,203 @@ namespace WindowsFormsApplication3
 
         private void convert_Click(object sender, EventArgs e)
         {
-            //Add BR Tags
-            int nchar = NoChars.Value;
+            //BOLD ITALICS
             String txt = text.Text;
-            int nbr = text.TextLength/nchar;
-            int brlen=4;
-            for (int i=0; i<nbr; i++)
+            string txt2 = "";
+            string sub = "";
+            string sup = "";
+            string bold = "";
+            string italics = "";
+            int[] array = new int[text.TextLength];
+            int[] array1 = new int[text.TextLength];
+            for (int j = 0; j < text.TextLength - 1; j++)
             {
-                txt = txt.Insert(nchar + nchar * i + brlen * i, "<br>");
+                array[j] = 0;
+                array1[j] = 0;
+                text.Select(j, 1);
+                if (text.SelectionFont.Bold)
+                    array[j] = 1;
+                if (text.SelectionFont.Italic)
+                    array[j] = 2;
+                if (text.SelectionCharOffset == -10)
+                    array1[j] = 1;
+                if (text.SelectionCharOffset == +10)
+                    array1[j] = 2;
+                // MessageBox.Show("" + array1[j]);
             }
+            int i = 0;
+            while (i < txt.Length - 1)
+            {
+                if (array1[i] == 0)
+                {
+                    while (array1[i] == 0 && i < txt.Length - 1)
+                    {
+                        if (array[i] == 0 && array1[i] == 0)
+                        {
+                            while (array[i] == 0 && i < txt.Length - 1 && array1[i] == 0)
+                            {
+                                txt2 += txt.Substring(i, 1);
+                                i++;
+                            }
+                        }
+                        else if (array[i] == 1 && array1[i] == 0)
+                        {
 
+                            while (array[i] == 1 && i < txt.Length - 1 && array1[i] == 0)
+                            {
+                                bold += txt.Substring(i, 1);
+
+                                i++;
+                            }
+                            txt2 += "<b>" + bold + "</b>";
+                            bold = "";
+                        }
+                        else
+                        {
+
+                            while (array[i] == 2 && i < txt.Length - 1 && array1[i] == 0)
+                            {
+                                italics += txt.Substring(i, 1);
+
+                                i++;
+                            }
+                            txt2 += "<i>" + italics + "</i>";
+                            italics = "";
+                        }
+                        //i++;
+                    }
+                }
+                else if (array1[i] == 1)
+                {
+                    while (array1[i] == 1 && i < txt.Length - 1)
+                    {
+                        if (array[i] == 0 && array1[i] == 1)
+                        {
+                            while (array[i] == 0 && i < txt.Length - 1 && array1[i] == 1)
+                            {
+                                sub += txt.Substring(i, 1);
+                                i++;
+                            }
+                        }
+                        else if (array[i] == 1 && array1[i] == 1)
+                        {
+
+                            while (array[i] == 1 && i < txt.Length - 1 && array1[i] == 1)
+                            {
+                                bold += txt.Substring(i, 1);
+
+                                i++;
+                            }
+                            sub += "<b>" + bold + "</b>";
+                            bold = "";
+                        }
+                        else
+                        {
+
+                            while (array[i] == 2 && i < txt.Length - 1 && array1[i] == 1)
+                            {
+                                italics += txt.Substring(i, 1);
+
+                                i++;
+                            }
+                            sub += "<i>" + italics + "</i>";
+                            italics = "";
+                        }
+                        //i++;
+                    }
+                    txt2 += "<sub>" + sub + "</sub>";
+                    sub = "";
+                }
+                else
+                {
+                    while (array1[i] == 2 && i < txt.Length - 1)
+                    {
+                        if (array[i] == 0 && array1[i] == 2)
+                        {
+                            while (array[i] == 0 && i < txt.Length - 1 && array1[i] == 2)
+                            {
+                                sup += txt.Substring(i, 1);
+                                i++;
+                            }
+                        }
+                        else if (array[i] == 1 && array1[i] == 2)
+                        {
+
+                            while (array[i] == 1 && i < txt.Length - 1 && array1[i] == 2)
+                            {
+                                bold += txt.Substring(i, 1);
+
+                                i++;
+                            }
+                            sup += "<b>" + bold + "</b>";
+                            bold = "";
+                        }
+                        else
+                        {
+
+                            while (array[i] == 2 && i < txt.Length - 1 && array1[i] == 2)
+                            {
+                                italics += txt.Substring(i, 1);
+
+                                i++;
+                            }
+                            sup += "<i>" + italics + "</i>";
+                            italics = "";
+                        }
+                        // i++;
+                    }
+                    txt2 += "<sup>" + sup + "</sup>";
+                    sup = "";
+                }
+
+
+            }
+            txt = txt2;
+
+            //<BR> CODE
+            
+            int nchar = NoChars.Value;
+            MessageBox.Show("" + nchar);
+            int len = txt.Length;
+            txt2 = "";
+            int count=0;
+            int max = 0;
+            for (i = 0; i < len; i++)
+            {
+                if (txt.Substring(i, 1) == "<")
+                {
+
+                    while (txt.Substring(i, 1) != ">" && i < len-1)
+                    {
+                        max++;
+                        txt2 += txt.Substring(i, 1);
+                        i++;
+                        if (max > 5)
+                            break;
+                    }
+                }
+                txt2 = txt2 + txt.Substring(i,1);
+                count++;
+                if (count == nchar)
+                {
+                    txt2 += "<br>";
+                    count = 0;
+                }
+            }
+            txt = txt2;
             //Find PP (paragraphs) and insert </p><p> at every instance
             txt = txt.Replace("PP", "</p><p>");
 
-            //Now TODO: Bold, Italics, Subscript and Superscript
-
             //End: Add HTML, FONT and <p> to the final result
-            txt = txt.Insert(0, "<html><font face=\"" + font.Text + "\" size=\"" + size.Text + "\" color=\""
+            txt = txt.Insert(0, "<html><font face=\"" + font.Text + "\" size=" + size.Text + " color=\""
                 + color.Text + "\">" +"<p>");
             txt = txt.Insert(txt.Length, "</p></font></html>");
             html.Text = txt;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         
