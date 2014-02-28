@@ -7,3 +7,15 @@ D:\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\GenerateRes
 D:\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\GenerateResource.write.1.tlog
 D:\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.exe
 D:\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.pdb
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.exe
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.pdb
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\bin\Release\WindowsFormsApplication3.exe
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\bin\Release\WindowsFormsApplication3.pdb
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\ResolveAssemblyReference.cache
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.Form1.resources
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.Properties.Resources.resources
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\GenerateResource.read.1.tlog
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\GenerateResource.write.1.tlog
+D:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.Form3.resources
+E:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.exe
+E:\OOAD Lab\WindowsFormsApplication3\WindowsFormsApplication3\obj\x86\Release\WindowsFormsApplication3.pdb

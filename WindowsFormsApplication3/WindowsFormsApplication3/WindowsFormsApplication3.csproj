@@ -55,10 +55,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,6 +90,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\abstract_energy_power_desktop_1680x1050_free-wallpaper-39619.jpg" />
+    <None Include="Resources\abstract_energy_power_desktop_1680x1050_free-wallpaper-396191.jpg" />
+    <None Include="Resources\lost_aurora_hdtv_1080p-hd %281%29.jpg" />
+    <None Include="Resources\abstract_blue_2-wide.jpg" />
+    <None Include="Resources\imagepages-backgrounds-abstract-lines-hd-px.jpg" />
+    <None Include="Resources\font_bold.png" />
+    <None Include="Resources\font_italic.png" />
+    <None Include="Resources\arrow_bottom.png" />
+    <None Include="Resources\arrow_top.png" />
+    <None Include="Resources\font_size.png" />
     <Content Include="url.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
